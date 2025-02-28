@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Based Attendance System</title>
+</head>
+<body>
+    <!-- Start of the webpage with Face Recognition System heading and image -->
+    <h2>Face Recognition Based Attendance System</h2>
+    <img src="C:/Projects/facerecognition/static/images/facial.jpg" alt="Face Recognition System" width="600"><br>
+    <figcaption>Face Recognition Attendance System in Action</figcaption>
+
+    <!-- Student Details Form -->
+    <h2>Student Details Form</h2>
+    <form action="/save_details" method="POST">
+        <label>Name: </label><input type="text" name="name" required><br>
+        <label>ID: </label><input type="text" name="student_id" required><br>
+        <label>Email: </label><input type="email" name="email" required><br>
+        <label>Phone: </label><input type="text" name="phone" required><br>
+        <label>Address: </label><input type="text" name="address" required><br>
+        <label>Branch: </label><input type="text" name="branch" required><br>
+        <button type="submit">Save</button>
+    </form>
+
+    <!-- Capture Image section -->
+    <h2>Capture Image</h2>
+    <form action="/capture_image" method="POST">
+        <label>Enter Student ID: </label><input type="text" name="student_id" required><br>
+        <button type="submit">Capture and Recognize</button>
+    </form>
+
+    <!-- Webcam Stream section -->
+    <h2>Webcam Stream</h2>
+    <img src="{{ url_for('video_feed') }}" alt="Webcam Stream"><br>
+
+</body>
+</html>
